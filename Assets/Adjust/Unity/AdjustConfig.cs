@@ -30,6 +30,9 @@ namespace com.adjust.sdk {
 
         // Windows specific members
         internal Action<String> logDelegate;
+
+        // Testing purposes only.
+        internal string basePath;
         #endregion
 
         #region Constructors
@@ -140,6 +143,12 @@ namespace com.adjust.sdk {
         // Windows specific methods.
         public void setLogDelegate(Action<String> logDelegate) {
             this.logDelegate = logDelegate;
+        }
+        #endregion
+
+        #region Test methods
+        public void SetBasePath(string basePath) {
+            this.basePath = basePath;
         }
         #endregion
     }
