@@ -309,10 +309,30 @@ namespace com.adjust.sdk {
 
             Adjust.instance.getGoogleAdId(onDeviceIdsRead);
         }
+
+        // Needed for testing purposes.
+        public static void OnResume() {
+            if (null == Adjust.instance) {
+                return;
+            }
+
+            Adjust.instance.onResume();
+        }
+
+        public static void OnPause() {
+            if (null == Adjust.instance) {
+                return;
+            }
+
+            Adjust.instance.onPause();
+        }
+
+        public static void Teardown() {
+            Adjust.instance = null;
+        }
         #endregion
-
+        
         #region Attribution callback
-
         public static void runAttributionChangedDictionary(Dictionary<string, string> dicAttributionData)
         {
             if (instance == null)
