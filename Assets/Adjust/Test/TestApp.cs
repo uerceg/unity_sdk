@@ -9,17 +9,20 @@ using UnityEngine.UI;
 using com.adjust.sdk;
 
 public class TestApp : MonoBehaviour {
-	private TestFactory testFactory;
+    private TestFactory testFactory;
+    private static bool isLaunched = false;
 
     void OnGUI() {
-        if (GUI.Button(new Rect(100, Screen.height / 2 - (Screen.height / 20), Screen.width - 200, Screen.height / 10), "START TESTS")) {
+        if (false == isLaunched) {
             string baseUrl = "https://10.0.2.2:8443";
 
             if (null == this.testFactory) {
-            	this.testFactory = new TestFactory(baseUrl);
+                this.testFactory = new TestFactory(baseUrl);
             }
 
             this.testFactory.InitTestMode();
+
+            isLaunched = true;
         }
     }
 }
