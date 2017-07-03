@@ -57,42 +57,42 @@ public class CommandExecutor {
         }
 
         if (!String.IsNullOrEmpty(timerInterval)) {
-            try {
-                long timerIntervalValue = Convert.ToInt64(timerInterval);
+            long timerIntervalValue = 0;
 
+            if (Int64.TryParse(timerInterval, out timerIntervalValue)) {
                 this.testFactory.SetTimerInterval(timerIntervalValue);
-            } catch (Exception e) {
-                Debug.Log("adjust test: " + e.ToString());
+            } else {
+                Debug.Log("adjust test: Failed to convert timerInterval string to long");
             }
         }
 
         if (!String.IsNullOrEmpty(timerStart)) {
-            try {
-                long timerStartValue = Convert.ToInt64(timerStart);
+            long timerStartValue = 0;
 
+            if (Int64.TryParse(timerStart, out timerStartValue)) {
                 this.testFactory.SetTimerStart(timerStartValue);
-            } catch (Exception e) {
-                Debug.Log("adjust test: " + e.ToString());
+            } else {
+                Debug.Log("adjust test: Failed to convert timerStart string to long");
             }
         }
 
         if (!String.IsNullOrEmpty(sessionInterval)) {
-            try {
-                long sessionIntervalValue = Convert.ToInt64(sessionInterval);
+            long sessionIntervalValue = 0;
 
+            if (Int64.TryParse(sessionInterval, out sessionIntervalValue)) {
                 this.testFactory.SetSessionInterval(sessionIntervalValue);
-            } catch (Exception e) {
-                Debug.Log("adjust test: " + e.ToString());
+            } else {
+                Debug.Log("adjust test: Failed to convert sessionInterval string to long");
             }
         }
 
-        if (!String.IsNullOrEmpty(sessionInterval)) {
-            try {
-                long subsessionIntervalValue = Convert.ToInt64(subsessionInterval);
+        if (!String.IsNullOrEmpty(subsessionInterval)) {
+            long subsessionIntervalValue = 0;
 
+            if (Int64.TryParse(subsessionInterval, out subsessionIntervalValue)) {
                 this.testFactory.SetSubsessionInterval(subsessionIntervalValue);
-            } catch (Exception e) {
-                Debug.Log("adjust test: " + e.ToString());
+            } else {
+                Debug.Log("adjust test: Failed to convert subsessionInterval string to long");
             }
         }
     }
