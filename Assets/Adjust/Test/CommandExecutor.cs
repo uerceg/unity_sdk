@@ -170,7 +170,7 @@ public class CommandExecutor {
             adjustConfig.setSendInBackground(sendInBackground.Equals("true"));
         }
 
-        if (!String.IsNullOrEmpty(userAgent)) {
+        if (null != userAgent) {
             if (userAgent.Equals("null")) {
                 adjustConfig.setUserAgent(null);
             } else {
