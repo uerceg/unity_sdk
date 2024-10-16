@@ -1,6 +1,8 @@
 {
     "name": "AdjustExamples",
-    "references": [],
+    "references": [
+        "AdjustSdk.Scripts"
+    ],
     "includePlatforms": [
         "Android",
         "Editor",
