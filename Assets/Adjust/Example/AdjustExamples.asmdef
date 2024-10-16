@@ -1,0 +1,8 @@
+{
+    "name": "AdjustExamples",
+    "references": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": []
+}
