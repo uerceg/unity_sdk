@@ -2,7 +2,9 @@
     "name": "AdjustExamples",
     "references": [],
     "includePlatforms": [
-        "Editor"
+        "Android",
+        "Editor",
+        "iOS"
     ],
     "excludePlatforms": []
 }
